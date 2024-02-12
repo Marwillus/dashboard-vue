@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "Roboto";
+    font-weight: 800;
+    src:
+        local("Roboto-Black"),
+        url("assets/fonts/roboto-black-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-weight: 600;
+    src:
+        local("Roboto-Medium"),
+        url("assets/fonts/roboto-medium-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-weight: 400;
+    src:
+        local("Roboto-Regular"),
+        url("src/assets/fonts/roboto-regular-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-weight: 200;
+    src:
+        local("Roboto-Light"),
+        url("src/assets/fonts/roboto-light-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "NewsCycle";
+    font-weight: 400;
+    src:
+        local("NewsCycle-Regular"),
+        url("src/assets/fonts/newscycle-regular-webfont.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Raleway";
+    font-weight: 100 1000;
+    src:
+        local("Jura-Variablefont_wght"),
+        url("src/assets/fonts/Jura-VF.woff2") format("woff2-variations"),
+        url("src/assets/fonts/Jura-VF.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Jura";
+    font-weight: 100 1000;
+    src:
+        local("Jura-Variablefont_wght"),
+        url("src/assets/fonts/Jura-VF.woff2") format("woff2-variations"),
+        url("src/assets/fonts/Jura-VF.woff2") format("woff2");
+}
