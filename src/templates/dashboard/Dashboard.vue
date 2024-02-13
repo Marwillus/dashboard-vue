@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard">
-    <!-- <Menu :setActiveTopic="setActiveTopic" :menuItems="menuItems" /> -->
+    <Menu :setActiveTopic="setActiveTopic" :menuItems="menuItems" />
 
     <div class="dashboard__content">
       <div class="dashboard__header">
@@ -40,7 +40,7 @@ import { ref, watch } from 'vue';
 import { ArchersBow, Home, MarketAnalysis, Microscope, SunOne } from '@icon-park/vue-next';
 
 // import { newsMockData, weatherMockDataCurrent, weatherMockDataForecast } from '../../api/mockdata';
-// import Menu from '../../components/menu/Menu.vue';
+import Menu from '../../components/menu/Menu.vue';
 // import Widget from '../../components/widget/Widget';
 // import { getLocation, Location } from '../../utils/helper/location';
 
@@ -76,9 +76,9 @@ const activeTopic = ref(0);
 const loading = ref(false);
 // const category = ref(menuItems[activeTopic.value].topic);
 
-// const setActiveTopic = (index) => {
-//   activeTopic.value = index;
-// };
+const setActiveTopic = (index: number) => {
+  activeTopic.value = index;
+};
 
 // const fetchData = async () => {
 //   loading.value = true;
