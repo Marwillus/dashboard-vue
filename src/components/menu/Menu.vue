@@ -18,8 +18,11 @@
 </template>
   
 <script setup lang="ts">
-import { MenuItem } from '../../templates/dashboard/Dashboard';
 import { defineComponent, onMounted, ref } from 'vue';
+
+const props = defineProps({
+  menuItemRefs
+})
 
 
 const activeElementsIndex = ref(0);
