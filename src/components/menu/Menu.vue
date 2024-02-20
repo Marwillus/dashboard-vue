@@ -18,22 +18,23 @@
 </template>
   
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted, onUpdated, ref } from 'vue';
 import { MenuItem } from '../../templates/dashboard/Dashboard';
 
 interface Props {
   menuItems: MenuItem[],
-  setActiveTopic: () => void
+  setActiveTopic: (index: number) => void
 }
-defineProps<Props>()
-
+const props = defineProps<Props>()
 
 const activeElementsIndex = ref(0);
 const menuItemRefs = ref([]);
-const menu = ref(null);
-const activeIndicator = ref(null);
+const menu = ref<HTMLDivElement>();
+const activeIndicator = ref<HTMLButtonElement | null>(null);
 
-const handleClickItem = (index) => {
+
+
+const handleClickItem = (index: number) => {
   activeElementsIndex.value = index;
   props.setActiveTopic(index);
 
@@ -43,18 +44,26 @@ const handleClickItem = (index) => {
   }
 };
 
-const moveIndicator = (node) => {
+const moveIndicator = (node: HTMLButtonElement) => {
   if (!activeIndicator.value || !menu.value) return;
 
+  console.log(node);
   const offsetActiveItem = node.getBoundingClientRect();
   const left = Math.floor(offsetActiveItem.left - menu.value.offsetLeft - (activeIndicator.value.offsetWidth - offsetActiveItem.width) / 2) + "px";
   activeIndicator.value.style.transform = `translate3d(${left}, 0 , 0)`;
 };
 
+onUpdated(() => {
+  const activeNode = menu.value?.querySelector(".menu__item--active");
+  if (activeNode instanceof HTMLButtonElement) {
+    moveIndicator(activeNode);
+  }
+})
+
 onMounted(() => {
   const handleWindowResize = () => {
     const activeNode = menu.value?.querySelector(".menu__item--active");
-    if (activeNode) {
+    if (activeNode instanceof HTMLButtonElement) {
       moveIndicator(activeNode);
     }
   };
