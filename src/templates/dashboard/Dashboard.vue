@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard">
-    <Menu :setActiveTopic="setActiveTopic" :menuItems="menuItems" />
+    <Menu :setActiveTopic="setActiveTopic" :menu-items="menuItems" />
 
     <div class="dashboard__content">
       <div class="dashboard__header">
@@ -41,10 +41,11 @@ import { ArchersBow, Home, MarketAnalysis, Microscope, SunOne } from '@icon-park
 
 // import { newsMockData, weatherMockDataCurrent, weatherMockDataForecast } from '../../api/mockdata';
 import Menu from '../../components/menu/Menu.vue';
+import { MenuItem } from './DashboardTypes';
 // import Widget from '../../components/widget/Widget';
 // import { getLocation, Location } from '../../utils/helper/location';
 
-const menuItems = [
+const menuItems: MenuItem[] = [
   {
     topic: "home",
     icon: Home,

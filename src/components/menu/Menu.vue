@@ -18,11 +18,14 @@
 </template>
   
 <script setup lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import { MenuItem } from '../../templates/dashboard/Dashboard';
 
-const props = defineProps({
-  menuItemRefs
-})
+interface Props {
+  menuItems: MenuItem[],
+  setActiveTopic: () => void
+}
+defineProps<Props>()
 
 
 const activeElementsIndex = ref(0);
@@ -64,6 +67,6 @@ onMounted(() => {
 </script>
   
 <style scoped>
-/* Add your styles here */
+@import './Menu.scss';
 </style>
   
